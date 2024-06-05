@@ -6,10 +6,12 @@ const Usuario = conexao.Schema({
         type:'String',
         required:true
     },
-    matricula:'String',
+    matricula:{ 
+        type: 'String',
+    },
     foto:'String',
-    datanasc:{
-        type:'Date'
+    senha:{
+        type:'String'
     }
 })
 export default conexao.model('Usuario',Usuario)

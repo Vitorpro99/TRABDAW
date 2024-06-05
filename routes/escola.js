@@ -1,7 +1,7 @@
 import express from 'express';
 const router = express.Router();
 
-import { cadastro,lst,abreCadastro ,abreedt, filtro, edt, del } from '../controllers/alunocontroller.js';
+import { cadastro, lst, abreCadastro, abreedt, filtro, edt, del } from '../controllers/alunocontroller.js';
 
 router.get('/cadastro', abreCadastro)
 router.post('/cadastro', cadastro)
