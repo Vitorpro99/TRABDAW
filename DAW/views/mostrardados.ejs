@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados do Usuário</title>
+</head>
+<style>
+    body{
+        background-color: rgb(255, 153, 0);
+    }
+    div{
+        background-color: white;
+        margin-top: 0px;
+        margin:auto;
+        width: 800px;
+        text-align: center;
+        padding:5px;
+        padding-bottom: 20px;
+    }
+    table{
+        font-size:larger;
+        margin-top: 20px;
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table,th,td{
+        border:3px solid black;
+    }
+    img{
+        width: 300px;
+    }
+</style>
+<body>
+    <div>
+    <img src="/<%=foto%>" alt="Foto do usuário">
+
+    <table>
+        <tr>
+            <th>Nome:</th>
+            <th><%=nome%></th>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <th><%=email%></th>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<%-include('cabecalho.ejs')%>
+    <form method="post">
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <div>
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome">
+        </div>
+        <div>
+            <label for="id-matricula"></label>
+        </div>
+        <div>
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+        <label for="foto">Foto</label>
+        <input type="file" name="foto" id="foto">
+    </form>
+    <div>
+        <label for="admin">Admin</label>
+        <input type="checkbox" name="admin" id="admin">
+    </div>
+    <div>
+        <input type="reset" value="limpar">
+        <input type="submit" value="Adicionar">
+    </div>
+</body>
+</html>
+<%-include('rodape.ejs')%>

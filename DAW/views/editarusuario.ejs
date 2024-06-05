@@ -1,0 +1,34 @@
+<%-include('cabecalho.ejs')%>
+    <form method="post">
+        <div>
+        <label for="id" class="form-label ">Id</label>
+        <input type="text" name="_id" id="id" value="<%=Usuario.id%>" class="form-control-plaintext" readonly disabled>
+    </div>
+        <div>
+            <label for="nome" class="form-label fw-bold">Nome</label>
+            <input type="text" name="nome" id="nome" class="form-control border border-primary">
+        </div>
+        <div>    
+        <label for="email" class="form-label fw-bold" >Email</label>
+        <input type="email" name="email" id="email" class="form-control border border-primary">
+        </div>
+        <div>    
+            <label for="senha" class="form-label fw-bold">Senha</label>
+            <input type="password" name="senha" id="senha" class="form-control border border-primary">
+        </div>
+        <div>    
+            <label for="foto" class="form-label fw-bold">Foto</label>
+            <input type="file" name="foto" id="foto" class="form-control border border-primary" >
+        </div>
+        <div>    
+        <label for="datanasc" class="form-label fw-bold">Data de nascimento</label>
+            <input type="date" name="datanasc" id="datanasc" class="form-control border border-primary" >
+        </div>
+        <div>
+            <input type="submit" value="Enviar" class=" btn btn-outline-primary mt-3 mb-3">
+            <a href="/deletausuario/<%=Usuario.id%>" class="btn btn-outline-danger">Deletar Usuario</a>
+        </div>
+
+</body>
+</html>
+<%-include('rodape.ejs')%>
