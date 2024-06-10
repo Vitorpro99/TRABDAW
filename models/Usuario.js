@@ -12,6 +12,7 @@ const Usuario = conexao.Schema({
     foto:'String',
     senha:{
         type:'String'
-    }
+    },
+    admin:'String'
 })
 export default conexao.model('Usuario',Usuario)

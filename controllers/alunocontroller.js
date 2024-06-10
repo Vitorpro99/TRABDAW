@@ -9,25 +9,11 @@ export async function cadastro(req, res) {
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
-        matricula: "AL" + "-" + mat,
+        matricula: "PR" + "-" + mat,
         foto: req.file.filename,
-        senha: req.body.senha
+        senha: req.body.senha,
+        admin: req.body.admin=="admin"?true:false
     })
     await usuario.save()
     console.log(usuario.matricula)
-}
-export function lst(req, res) {
-
-}
-export function filtro(req, res) {
-
-}
-export function abreedt(req, res) {
-
-}
-export function edt(req, res) {
-
-}
-export function del(req, res) {
-
 }
