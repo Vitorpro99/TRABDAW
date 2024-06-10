@@ -1,17 +1,19 @@
+import Usuario from '../models/Usuario.js'
+
 export function abreCadastro(req, res) {
     res.render("cadastro.ejs")
 }
-export function cadastro(req, res) {
+export async function cadastro(req, res) {
     var mat = Math.floor(Math.random() * 100000000).toString()
     console.log(mat)
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
-        matricula: mat,
+        matricula: "AL" + "-" + mat,
         foto: req.file.filename,
         senha: req.body.senha
     })
-    usuario.save()
+    await usuario.save()
     console.log(usuario.matricula)
 }
 export function lst(req, res) {
