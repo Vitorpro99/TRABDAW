@@ -12,6 +12,7 @@ router.get('/cadastro', abreCadastro)
 router.post('/cadastro', foto.single('foto'), cadastro)
 
 
+router.get('/cadastroAl',abreCadastroAl)
 router.post('/cadastroAl', foto.single('foto'), cadastroAl)
 
 export default router;
