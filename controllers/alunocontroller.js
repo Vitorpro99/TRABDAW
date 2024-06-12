@@ -1,6 +1,11 @@
 import Usuario from '../models/Usuario.js'
 import Aluno from '../models/Aluno.js'
 
+
+export async function telaInicio(req,res) {
+    res.render()
+}
+
 export function abreCadastro(req, res) {
     res.render("cadastro.ejs")
 }

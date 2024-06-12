@@ -6,8 +6,8 @@ const foto = multer({
 })
 
 
-import { cadastro, abreCadastro, abreCadastroAl, cadastroAl } from '../controllers/alunocontroller.js';
-
+import { cadastro, abreCadastro, abreCadastroAl, cadastroAl, telaInicio } from '../controllers/alunocontroller.js';
+router.get('/', telaInicio)
 router.get('/cadastro', abreCadastro)
 router.post('/cadastro', foto.single('foto'), cadastro)
 
