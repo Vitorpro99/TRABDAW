@@ -10,7 +10,7 @@
         </div>
         <div>
             <label for="matricula"></label>
-            <input type="text" name="matricula" id="matricula" value="<% Math.floor(Math.random() * 100000000).toString()%>">
+            <input type="text" name="matricula" id="matricula" value="<%- "AL" + "-" + Math.floor(Math.random() * 100000000).toString()%>">
         </div>
         <label for="foto">Foto</label>
         <input type="file" name="foto" id="foto">

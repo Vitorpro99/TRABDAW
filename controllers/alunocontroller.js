@@ -9,7 +9,7 @@ export async function cadastro(req, res) {
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
-        matricula: "PR" + "-" + mat,
+        matricula: req.body.matricula,
         foto: req.file.filename,
         senha: req.body.senha,
         admin: req.body.admin == "admin" ? true : false
@@ -27,7 +27,7 @@ export async function cadastroAl(req, res) {
     const aluno = new Aluno({
         nome: req.body.nome,
         email: req.body.email,
-        matricula: "AL" + "-" + mat,
+        matricula: req.body.matricula,
         foto: req.file.filename,
     })
     await aluno.save()
