@@ -6,7 +6,7 @@ const Aluno = conexao.Schema({
     curso: [{
         type: 'String'
     }],
-    matricula:'String',
+matricula:'String',
     foto:'String'
 })
 export default conexao.model('Aluno',Aluno)
