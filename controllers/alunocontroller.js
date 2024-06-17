@@ -39,4 +39,11 @@ export async function cadastroAl(req, res) {
     console.log(aluno.matricula)
 }
 
+export function abreLogin(req,res){
+    res.render("login.ejs")
+}
+export function login(req,res){
+    
+}
+
 

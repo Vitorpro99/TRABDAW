@@ -1,25 +1,29 @@
 <%-include('cabecalho.ejs')%>
-    <form method="post" enctype="multipart/form-data">
-        <div>
-            <label for="email">Email</label>
-            <input type="email" name="email" id="email">
-        </div>
-        <div>
-            <label for="nome">Nome</label>
-            <input type="text" name="nome" id="nome">
-        </div>
-        <div>
-            <label for="matricula"></label>
-            <input type="text" name="matricula" id="matricula" value="<%- "AL" + "-" + Math.floor(Math.random() * 100000000).toString()%>">
-        </div>
-        <label for="foto">Foto</label>
-        <input type="file" name="foto" id="foto">
-        <div>
-            <input type="reset" value="limpar">
-            <input type="submit" value="Adicionar">
-        </div>
-    </form>
-    </body>
+    <div class="d-flex flex-column flex-grow-1 p-3 text-bg-light">
+        <form method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" name="email" id="email">
+            </div>
+            <div class="mb-3">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" class="form-control" name="nome" id="nome">
+            </div>
+            <div class="mb-3">
+                <label for="matricula" class="form-label">Mátricula</label>
+                <input type="text" class="form-control" name="matricula" id="matricula" value="<%- "AL" + "-" + Math.floor(Math.random() * 100000000).toString()%>">
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Foto</label>
+                <input type="file" class="form-control" name="foto" id="foto">
+            </div>
+            <div>
+                <input type="reset" class="btn btn-secondary" value="Limpar">
+                <input type="submit" class="btn btn-primary" value="Adicionar">
+            </div>
+        </form>
+    </div>
+</body>
 
-    </html>
-    <%-include('rodape.ejs')%>
+</html>
+<%-include('rodape.ejs')%>
