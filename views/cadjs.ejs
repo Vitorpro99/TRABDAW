@@ -1,0 +1,18 @@
+<script>
+    // Verificar se o tema escuro está ativado no sistema
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Aplicar o tema escuro se estiver ativado
+    function applyTheme() {
+        if (prefersDarkScheme.matches) {
+            document.body.classList.add("dark-mode");
+        } else {
+            document.body.classList.remove("dark-mode");
+        }
+    }
+
+    applyTheme(); // Aplicar o tema ao carregar a página
+
+    // Ouvir mudanças no tema do sistema
+    prefersDarkScheme.addListener(applyTheme);
+</script>
