@@ -10,7 +10,6 @@ export function abreCadastro(req, res) {
     res.render("cadastro.ejs")
 }
 export async function cadastro(req, res) {
-    var mat = Math.floor(Math.random() * 100000000).toString()
     const usuario = new Usuario({
         nome: req.body.nome,
         email: req.body.email,
@@ -28,14 +27,13 @@ export function abreCadastroAl(req, res) {
 }
 
 export async function cadastroAl(req, res) {
-    var mat = Math.floor(Math.random() * 100000000).toString()
     const aluno = new Aluno({
         nome: req.body.nome,
         email: req.body.email,
         matricula: req.body.matricula,
         foto: req.file.filename,
     })
-    await aluno.save()
+    await aluno.save()  
     console.log(aluno.matricula)
 }
 
@@ -46,8 +44,9 @@ export function login(req,res){
     res.render("lst.ejs")
 }
 
-export function lst(req,res) {
-    res.render("lst.ejs")
+export async function lst(req,res) {
+    const alunos = await Aluno.find(); // Busca todos os alunos do banco de dados
+    res.render('lst.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
 }
 
 
