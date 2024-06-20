@@ -43,7 +43,11 @@ export function abreLogin(req,res){
     res.render("login.ejs")
 }
 export function login(req,res){
-    
+    res.render("lst.ejs")
+}
+
+export function lst(req,res) {
+    res.render("lst.ejs")
 }
 
 
