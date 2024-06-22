@@ -4,8 +4,9 @@ import conexao from '../config/conexao.js'
 const Curso = conexao.Schema({
     nome: 'String',
     descricao: 'String',
+    cursoid:'String',
     duracao: 'Number',
-    usuario: [{
+    professor: [{
         type: 'String'
     }]
 })
