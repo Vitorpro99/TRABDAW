@@ -1,18 +1,24 @@
 <%-include('cabecalho.ejs')%>
 <div>
-    <h1>Alunos</h1>
-    <table>
-        <tr>
-            <th>Nome</th>
-            <th>Email</th>
-            <th>Matrícula</th>
-        </tr>
-        <% alunos.forEach(aluno => { %>
-            <tr>
-                <td><%= aluno.nome %></td>
-                <td><%= aluno.email %></td>
-                <td><%= aluno.matricula %></td>
-            </tr>
-        <% }); %>
-    </table>
+    <div class="p-3">
+        <h1 class="display-4">Alunos</h1>
+    </div>
+    <div class="ms-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Matrícula</th>
+                </tr>
+            </thead>
+            <% alunos.forEach(aluno => { %>
+                <tr>
+                    <td><%= aluno.nome %></td>
+                    <td><%= aluno.email %></td>
+                    <td><%= aluno.matricula %></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
 </div>
