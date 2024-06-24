@@ -1,4 +1,4 @@
-import Usuario from '../models/Usuario.js'
+import Professor from '../models/Professor.js'
 import Aluno from '../models/Aluno.js'
 import Curso from '../models/Curso.js'
 
@@ -10,7 +10,7 @@ export function abreCadastro(req, res) {
     res.render("cadastro.ejs")
 }
 export async function cadastro(req, res) {
-    const usuario = new Usuario({
+    const professor = new Professor({
         nome: req.body.nome,
         email: req.body.email,
         matricula: req.body.matricula,
@@ -18,8 +18,8 @@ export async function cadastro(req, res) {
         senha: req.body.senha,
         admin: req.body.admin == "admin" ? true : false
     })
-    await usuario.save()
-    console.log(usuario.matricula)
+    await professor.save()
+    console.log(Professor.matricula)
 }
 
 export function abreCadastroAl(req, res) {
