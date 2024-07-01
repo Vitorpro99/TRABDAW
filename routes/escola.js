@@ -6,7 +6,7 @@ const foto = multer({
 })
 
 
-import { cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso, telaInicio, abreLogin, login, lst } from '../controllers/alunocontroller.js';
+import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso, telaInicio, abreLogin, login, lst } from '../controllers/alunocontroller.js';
 
 //Tela Inicial
 router.get('/', telaInicio)
@@ -27,7 +27,10 @@ router.post('/cadastroAl', foto.single('foto'), cadastroAl)
 router.get('/cadastroCurso',abreCadastroCurso)
 router.post('/cadastroCurso',cadastraCurso)
 
+router.get('/cadastroNota',abreCadastroNota)
+router.post('/cadastroNota',cadastraNota)
+
 //Lista de Alunos
-router.get('/lst', lst);    
+router.get('/lst', lst); 
 
 export default router;

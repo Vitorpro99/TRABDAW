@@ -10,24 +10,23 @@
 </head>
 <body>
     <h1 class="position-absolute top-0 start-50 translate-middle mt-5">CADASTRO DE CURSOS</h1>
-    <div class="bg-light p-3 text-bg-light col-5 col-md-5 position-absolute top-50 start-50 translate-middle border rounded-2">
+    <div class="bg-light p-3 text-bg-light col-5 col-md-8 position-absolute top-50 start-50 translate-middle border rounded-2">
         <form method="post">
             <div class="mb-3">
-                <label for="nome" class="form-label">Nome do curso</label>
-                <input type="text" class="form-control" name="nome" id="nome">
+                <label for="aluno" class="form-label">Aluno</label>
+                <input type="text" class="form-control" name="aluno" id="aluno">
             </div>
             <div class="mb-3">
-                <label for="cursoid" class="form-label">Id do curso</label>
-                <input type="text" readonly class="form-control" name="cursoid" id="cursoid" value="CUR-<%= Math.floor(Math.random() * 100000000).toString() %>-<%- Date.now() %>">
+                <label for="cursoid" class="form-label">Curso</label>
+                <input type="text" class="form-control" name="cursoid" id="cursoid">
             </div>
-            <div class="mb-3 input-group">
-                <label for="duracao" class="form-label me-2">Carga horaria do curso</label> </n>
+            <div class="mb-3">
+                <label for="duracao" class="form-label">Carga horaria do curso</label>
                 <input class="form-control" type="number" name="duracao" id="duracao" min="0">
-                <span class="input-group-text">h</span>
             </div>
-            <div class="mb-3">
-                <label for="professor" class="form-label">Professores</label>
-                <input type="text" class="form-control" name="professor" id="professor">
+            <div>
+                <label for="avaliacao" class="form-label">Avaliação</label>
+                <input type="text" class="form-control" name="avaliacao" id="avaliacao">
             </div>
             <div>
                 <input type="reset" class="btn btn-secondary" value="Limpar">

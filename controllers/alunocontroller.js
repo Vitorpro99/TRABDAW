@@ -1,6 +1,7 @@
 import Professor from '../models/Professor.js'
 import Aluno from '../models/Aluno.js'
 import Curso from '../models/Curso.js'
+import Nota from '../models/Nota.js'
 
 export function telaInicio(req,res) {
     res.render('tela.ejs')
@@ -63,5 +64,17 @@ export async function cadastraCurso(req,res){
     })
     await curso.save()
 }
-
+export async function abreCadastroNota(req,res){
+    const cursos = await Curso.find()
+    res.render('cadastroNota.ejs', { cursos })
+}
+export async function cadastraNota(req,res){
+    const nota =  new Nota({
+        aluno: req.body.aluno,
+        avaliacao: req.body.avaliacao,
+        curso: req.body.nota,
+        nota: req.body.nota
+    })
+    await nota.save()
+}
 
