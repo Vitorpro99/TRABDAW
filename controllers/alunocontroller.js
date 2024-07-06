@@ -50,8 +50,9 @@ export async function lst(req,res) {
     res.render('lst.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
 }
 
-export function abreCadastroCurso(req,res){
-    res.render("cadastroCurso.ejs")
+export async function abreCadastroCurso(req,res){
+    const professors = await Professor.find(); //Busca os professores
+    res.render("cadastroCurso.ejs", {professors}); // Renderiza com os professores achados
 }
 
 export async function cadastraCurso(req,res){

@@ -26,8 +26,12 @@
                 <span class="input-group-text">h</span>
             </div>
             <div class="mb-3">
-                <label for="professor" class="form-label">Professores</label>
-                <input type="text" class="form-control" name="professor" id="professor">
+                <label for="professor" class="form-label">Professor</label>
+                <select name="professor" id="professor">
+                    <% professors.forEach(professor => { %>
+                        <option value="<%= professor.matricula %>"><%= professor.nome %></option>
+                    <% }); %>
+                </select>
             </div>
             <div>
                 <input type="reset" class="btn btn-secondary" value="Limpar">
