@@ -1,0 +1,29 @@
+<%-include('cabecalho.ejs')%>
+<div>
+    <div class="p-3">
+        <h1 class="display-4">Alunos</h1>
+    </div>
+    <div class="ms-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Matrícula</th>
+                    <th>Deletar</th>
+                </tr>
+            </thead>
+            <% alunos.forEach(aluno => { %>
+                <tr>
+                    <td><%= aluno.nome %></td>
+                    <td><%= aluno.email %></td>
+                    <td><%= aluno.matricula %></td>
+                    <td>
+                        <a href="/escola/delAl/<%=aluno._id%>">Deletar</a>
+                    </td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+</div>
+<%- include('rodape.ejs') %>
