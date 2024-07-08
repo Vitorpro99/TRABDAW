@@ -4,9 +4,7 @@ const Nota = conexao.Schema({
     aluno: [{
         type: 'String'
     }],
-    curso: [{
-        type: 'String'
-    }],
+    curso:'String',
     avaliacao: 'String',
     nota: [{
         type: 'Number'

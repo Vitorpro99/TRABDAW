@@ -23,8 +23,9 @@ export async function cadastro(req, res) {
     console.log(Professor.matricula)
 }
 
-export function abreCadastroAl(req, res) {
-    res.render("cadastroAluno.ejs")
+export async function abreCadastroAl(req, res) {
+    const cursos = await Curso.find()
+    res.render("cadastroAluno.ejs", { cursos })
 }
 
 export async function cadastroAl(req, res) {
@@ -66,14 +67,15 @@ export async function cadastraCurso(req,res){
     await curso.save()
 }
 export async function abreCadastroNota(req,res){
+    const alunos = await Aluno.find()
     const cursos = await Curso.find()
-    res.render('cadastroNota.ejs', { cursos })
+    res.render('cadastroNota.ejs', { cursos,alunos })
 }
 export async function cadastraNota(req,res){
     const nota =  new Nota({
         aluno: req.body.aluno,
         avaliacao: req.body.avaliacao,
-        curso: req.body.nota,
+        curso: req.body.curso,
         nota: req.body.nota
     })
     await nota.save()

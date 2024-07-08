@@ -21,6 +21,14 @@
                 <input type="text" class="form-control" name="nome" id="nome">
             </div>
             <div class="mb-3">
+                <label for="curso" class="form-label">Curso</label>
+                <select class="form-control" name="curso" id="curso">
+                    <% cursos.forEach(curso => { %>
+                        <option value="<%= curso.cursoid %>"><%= curso.nome %></option>
+                    <% }); %>
+                </select>
+            </div>
+            <div class="mb-3">
                 <label for="matricula" class="form-label">Matrícula</label>
                 <input type="text" readonly class="form-control" name="matricula" id="matricula" value="AL-<%= Math.floor(Math.random() * 100000000).toString() %>">
             </div>

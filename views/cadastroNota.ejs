@@ -9,20 +9,28 @@
     <%-include('logincss.ejs')%>
 </head>
 <body>
-    <h1 class="position-absolute top-0 start-50 translate-middle mt-5">CADASTRO DE CURSOS</h1>
+    <h1 class="position-absolute top-0 start-50 translate-middle mt-5">CADASTRO DE NOTAS</h1>
     <div class="bg-light p-3 text-bg-light col-5 col-md-8 position-absolute top-50 start-50 translate-middle border rounded-2">
         <form method="post">
             <div class="mb-3">
                 <label for="aluno" class="form-label">Aluno</label>
-                <input type="text" class="form-control" name="aluno" id="aluno">
+                <select multiple size="3" class="form-control" name="aluno[]" id="aluno">
+                    <% alunos.forEach(aluno => { %>
+                        <option value="<%= aluno.matricula %>"><%= aluno.nome %></option>
+                    <% }); %>
+                </select>
             </div>
             <div class="mb-3">
-                <label for="cursoid" class="form-label">Curso</label>
-                <input type="text" class="form-control" name="cursoid" id="cursoid">
+                <label for="curso" class="form-label">Curso</label>
+                <select class="form-control" name="curso" id="curso">
+                    <% cursos.forEach(curso => { %>
+                        <option value="<%= curso.cursoid %>"><%= curso.nome %></option>
+                    <% }); %>
+                </select>
             </div>
             <div class="mb-3">
-                <label for="duracao" class="form-label">Carga horaria do curso</label>
-                <input class="form-control" type="number" name="duracao" id="duracao" min="0">
+                <label for="nota" class="form-label">Nota</label>
+                <input class="form-control" type="number" name="nota" id="nota" min="0" max="10" step="0.01">
             </div>
             <div>
                 <label for="avaliacao" class="form-label">Avaliação</label>
