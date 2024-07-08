@@ -81,4 +81,8 @@ export async function cadastraNota(req,res){
     await nota.save()
 }
 
+export async function lstCursos(req,res) {
+    const cursos = await Curso.find(); // Busca todos os cursos do banco de dados
+    res.render('lstCursos.ejs', { cursos }); // Renderiza a página ejs com os cursos encontrados
+}
 
