@@ -43,12 +43,12 @@ export function abreLogin(req,res){
     res.render("login.ejs")
 }
 export function login(req,res){
-    res.render("lst.ejs")
+    res.render("lstadm.ejs")
 }
 
 export async function lst(req,res) {
     const alunos = await Aluno.find(); // Busca todos os alunos do banco de dados
-    res.render('lst.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
+    res.render('lstadm.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
 }
 
 export async function abreCadastroCurso(req,res){
@@ -81,4 +81,9 @@ export async function cadastraNota(req,res){
     await nota.save()
 }
 
+export async function delAl(req,res){
+    await Aluno.findByIdAndDelete(req.params.id)
+    res.redirect('/escola/lst')
+}
 
+    
