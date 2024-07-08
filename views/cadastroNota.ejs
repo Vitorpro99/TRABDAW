@@ -14,7 +14,8 @@
         <form method="post">
             <div class="mb-3">
                 <label for="aluno" class="form-label">Aluno</label>
-                <select multiple size="3" class="form-control" name="aluno[]" id="aluno">
+                <select class="form-control" name="aluno[]" id="aluno">
+                    <option value="" selected>Selecione um aluno</option>
                     <% alunos.forEach(aluno => { %>
                         <option value="<%= aluno.matricula %>"><%= aluno.nome %></option>
                     <% }); %>
