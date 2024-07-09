@@ -6,10 +6,7 @@ const foto = multer({
 })
 
 
-import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso, telaInicio, abreLogin, login, lst, delAl } from '../controllers/admcontroller.js';
-
-//Tela Inicial
-router.get('/', telaInicio)
+import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso,delAl,lstCursos,lst } from '../controllers/admcontroller.js';
 
 //Cadastro Prof
 router.get('/cadastro', abreCadastro)
@@ -26,9 +23,10 @@ router.post('/cadastroCurso',cadastraCurso)
 router.get('/cadastroNota',abreCadastroNota)
 router.post('/cadastroNota',cadastraNota)
 
+router.get('/delAl/:id', delAl)
+
 //Lista de Alunos
 router.get('/lst', lst); 
-
-router.get('/delAl/:id', delAl)
+router.get('/lstCursos', lstCursos)
 
 export default router;
