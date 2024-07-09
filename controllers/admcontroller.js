@@ -3,10 +3,6 @@ import Aluno from '../models/Aluno.js'
 import Curso from '../models/Curso.js'
 import Nota from '../models/Nota.js'
 
-export function telaInicio(req,res) {
-    res.render('tela.ejs')
-}
-
 export function abreCadastro(req, res) {
     res.render("cadastro.ejs")
 }
@@ -37,13 +33,6 @@ export async function cadastroAl(req, res) {
     })
     await aluno.save()  
     console.log(aluno.matricula)
-}
-
-export function abreLogin(req,res){
-    res.render("login.ejs")
-}
-export function login(req,res){
-    res.render("lstadm.ejs")
 }
 
 export async function lst(req,res) {
@@ -84,6 +73,11 @@ export async function cadastraNota(req,res){
 export async function delAl(req,res){
     await Aluno.findByIdAndDelete(req.params.id)
     res.redirect('/escola/lst')
+}
+
+export async function lstCursos(req,res) {
+    const cursos = await Curso.find(); // Busca todos os cursos do banco de dados
+    res.render('lstCursos.ejs', { cursos }); // Renderiza a página ejs com os cursos encontrados
 }
 
     
