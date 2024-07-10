@@ -31,3 +31,9 @@ export async function lstNota(req,res) {
     const nota = await Nota.find(); // Busca todos os cursos do banco de dados
     res.render('lstNota.ejs', { nota }); // Renderiza a página ejs com os cursos encontrados
 }
+
+export async function perfil(req,res) {
+    const professor = await Professor.findById(req.user.id)
+    res.render("perfil.ejs", {professor:professor})
+}
+

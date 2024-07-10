@@ -13,3 +13,6 @@ export function login(req,res){
         failureRedirect: '/escola/'
     })
 }
+export function perfil(req,res) {
+    res.render("perfil.ejs")
+}
