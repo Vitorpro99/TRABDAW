@@ -14,7 +14,5 @@ router.post('/cadastroNota',cadastraNota)
 //Lista de Alunos
 router.get('/lst', lst); 
 router.get('/lstCursos', lstCursos)
-
-//Lista de Notas
 router.get('/lstNota', lstNota)
 export default router;

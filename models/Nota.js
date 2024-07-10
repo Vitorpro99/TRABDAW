@@ -6,9 +6,7 @@ const Nota = conexao.Schema({
     },
     curso:'String',
     avaliacao: 'String',
-    nota: {
-        type: 'Number'
-    }
+    nota:'Number'
 })
 
 export default conexao.model('Nota',Nota)
