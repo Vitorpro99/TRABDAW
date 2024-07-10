@@ -7,7 +7,7 @@ const foto = multer({
 import passport from '../config/passport.js';
 
 
-import { telaInicio,abreLogin,login } from '../controllers/controller.js';
+import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso, telaInicio, abreLogin, login, lst, lstCursos, lstNota } from '../controllers/alunocontroller.js';
 
 //Tela Inicial
 router.get('/', telaInicio)
@@ -18,5 +18,5 @@ router.post('/login',passport.authenticate('local', {
     successRedirect: '/escola/lst',
     failureRedirect: '/escola/'
 }))
-export default router
 
+export default router;
