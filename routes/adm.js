@@ -5,31 +5,31 @@ const foto = multer({
     dest: './public/foto'
 })
 
-
+import autenticacaoadmin from '../config/autenticacaoadmin.js'
 import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso,delAl,lstCursos,lst, lstNota } from '../controllers/admcontroller.js';
 
 //Cadastro Prof
-router.get('/cadastro', abreCadastro)
-router.post('/cadastro', foto.single('foto'), cadastro)
+router.get('/cadastro',autenticacaoadmin, abreCadastro)
+router.post('/cadastro', foto.single('foto'),autenticacaoadmin,cadastro)
 
 //cadastro Aluno
 router.get('/cadastroAl',abreCadastroAl)
-router.post('/cadastroAl', foto.single('foto'), cadastroAl)
+router.post('/cadastroAl', foto.single('foto'),autenticacaoadmin,cadastroAl)
 
 //Cadastro dos cursos
-router.get('/cadastroCurso',abreCadastroCurso)
-router.post('/cadastroCurso',cadastraCurso)
+router.get('/cadastroCurso',autenticacaoadmin,abreCadastroCurso)
+router.post('/cadastroCurso',autenticacaoadmin,cadastraCurso)
 
-router.get('/cadastroNota',abreCadastroNota)
-router.post('/cadastroNota',cadastraNota)
+router.get('/cadastroNota',autenticacaoadmin,abreCadastroNota)
+router.post('/cadastroNota',autenticacaoadmin,cadastraNota)
 
-router.get('/delAl/:id', delAl)
+router.get('/delAl/:id',autenticacaoadmin,delAl)
 
 //Lista de Alunos
-router.get('/lst', lst); 
-router.get('/lstCursos', lstCursos)
+router.get('/lst' ,autenticacaoadmin,lst); 
+router.get('/lstCursos',autenticacaoadmin, lstCursos)
 
 //Lista de Notas
-router.get('/lstNota', lstNota)
+router.get('/lstNota',autenticacaoadmin, lstNota)
 
 export default router;

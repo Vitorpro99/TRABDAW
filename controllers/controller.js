@@ -9,7 +9,7 @@ export function abreLogin(req,res){
 }
 export function login(req,res){
     passport.authenticate('local', {
-        successRedirect: '/escola/lst',
+        successRedirect: '/user/lst',
         failureRedirect: '/escola/'
     })
 }
