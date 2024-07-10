@@ -7,7 +7,7 @@ const foto = multer({
 import passport from '../config/passport.js';
 
 
-import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso, telaInicio, abreLogin, login, lst, lstCursos, lstNota } from '../controllers/alunocontroller.js';
+import {telaInicio, abreLogin} from '../controllers/alunocontroller.js';
 
 //Tela Inicial
 router.get('/', telaInicio)
