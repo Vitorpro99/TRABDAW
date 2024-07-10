@@ -1,14 +1,12 @@
 import conexao from '../config/conexao.js'
 
 const Nota = conexao.Schema({
-    aluno: [{
+    aluno: {
         type: 'String'
-    }],
+    },
     curso:'String',
     avaliacao: 'String',
-    nota: [{
-        type: 'Number'
-    }]
+    nota:'Number'
 })
 
 export default conexao.model('Nota',Nota)
