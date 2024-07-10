@@ -17,7 +17,7 @@
                 <select class="form-control" name="aluno[]" id="aluno">
                     <option value="" selected>Selecione um aluno</option>
                     <% alunos.forEach(aluno => { %>
-                        <option value="<%= aluno.matricula %>"><%= aluno.nome %></option>
+                        <option value="<%= aluno.nome %>"><%= aluno.nome %></option>
                     <% }); %>
                 </select>
             </div>

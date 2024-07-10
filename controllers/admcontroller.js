@@ -79,5 +79,9 @@ export async function lstCursos(req,res) {
     const cursos = await Curso.find(); // Busca todos os cursos do banco de dados
     res.render('lstCursos.ejs', { cursos }); // Renderiza a página ejs com os cursos encontrados
 }
+export async function lstNota(req,res) {
+    const nota = await Nota.find(); // Busca todos os cursos do banco de dados
+    res.render('lstNota.ejs', { nota }); // Renderiza a página ejs com os cursos encontrados
+}
 
     
