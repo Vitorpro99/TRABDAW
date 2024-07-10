@@ -6,7 +6,7 @@ const foto = multer({
 })
 
 
-import {cadastraNota,abreCadastroNota, lst, lstCursos } from '../controllers/alunocontroller.js';
+import {cadastraNota,abreCadastroNota, lst, lstCursos, lstNota } from '../controllers/alunocontroller.js';
 
 router.get('/cadastroNota',abreCadastroNota)
 router.post('/cadastroNota',cadastraNota)
