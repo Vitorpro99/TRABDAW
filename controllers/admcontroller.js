@@ -36,8 +36,9 @@ export async function cadastroAl(req, res) {
 }
 
 export async function lst(req,res) {
+    const professor = await Professor.findById(req.user.id)
     const alunos = await Aluno.find(); // Busca todos os alunos do banco de dados
-    res.render('lstadm.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
+    res.render('lstadm.ejs', { alunos, professor:professor }); // Renderiza a página ejs com os alunos encontradoss
 }
 
 export async function abreCadastroCurso(req,res){
@@ -76,12 +77,14 @@ export async function delAl(req,res){
 }
 
 export async function lstCursos(req,res) {
+    const professor = await Professor.findById(req.user.id)
     const cursos = await Curso.find(); // Busca todos os cursos do banco de dados
-    res.render('lstCursos.ejs', { cursos }); // Renderiza a página ejs com os cursos encontrados
+    res.render('lstCursos.ejs', { cursos, professor:professor }); // Renderiza a página ejs com os cursos encontrados
 }
 export async function lstNota(req,res) {
+    const professor = await Professor.findById(req.user.id)
     const nota = await Nota.find(); // Busca todos os cursos do banco de dados
-    res.render('lstNota.ejs', { nota }); // Renderiza a página ejs com os cursos encontrados
+    res.render('lstNota.ejs', { nota, professor:professor }); // Renderiza a página ejs com os cursos encontrados
 }
 
     

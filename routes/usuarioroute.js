@@ -14,7 +14,7 @@ router.post('/cadastroNota',cadastraNota)
 //Lista de Alunos
 router.get('/lst', lst); 
 router.get('/lstCursos', lstCursos)
-router.get('/lstNota', lstNota)
+router.get('/lstNota/:id', lstNota)
 
 router.get('/perfil', perfil)
 export default router;

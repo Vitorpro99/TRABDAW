@@ -3,7 +3,8 @@ import conexao from '../config/conexao.js'
 const Aluno = conexao.Schema({
     nome:'String',
     email: 'String',
-    curso: [{
+    curso: 'String',
+    nota: [{
         type: 'String'
     }],
     matricula:'String',

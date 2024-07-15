@@ -30,8 +30,10 @@ export async function lstCursos(req,res) {
     res.render('lstCursos.ejs', { cursos, professor:professor }); // Renderiza a página ejs com os cursos encontrados
 }
 export async function lstNota(req,res) {
-    const nota = await Nota.find(); // Busca todos os cursos do banco de dados
-    res.render('lstNota.ejs', { nota }); // Renderiza a página ejs com os cursos encontrados
+    const professor = await Professor.findById(req.user.id)
+    const nota = await Nota.find({aluno:req.params.id}); // Busca todos os cursos do banco de dados
+    const aluno = await Aluno.findOne({matricula:req.params.id})
+    res.render('lstNota.ejs', { Nota:nota, professor:professor, aluno:aluno }); // Renderiza a página ejs com os cursos encontrados
 }
 
 export async function perfil(req,res) {
