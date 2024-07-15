@@ -14,7 +14,7 @@
         <form method="post">
             <div class="mb-3">
                 <label for="aluno" class="form-label">Aluno</label>
-                <select class="form-control" name="aluno[]" id="aluno">
+                <select class="form-control" name="aluno" id="aluno">
                     <option value="" selected>Selecione um aluno</option>
                     <% alunos.forEach(aluno => { %>
                         <option value="<%= aluno.nome %>"><%= aluno.nome %></option>
@@ -25,19 +25,19 @@
                 <label for="curso" class="form-label">Curso</label>
                 <select class="form-control" name="curso" id="curso">
                     <% cursos.forEach(curso => { %>
-                        <option value="<%= curso.cursoid %>"><%= curso.nome %></option>
+                        <option value="<%= curso.nome %>"><%= curso.nome %></option>
                     <% }); %>
                 </select>
             </div>
             <div class="mb-3">
                 <label for="nota" class="form-label">Nota</label>
-                <input class="form-control" type="number" name="nota" id="nota" min="0" max="10" step="0.01">
+                <input class="form-control" type="number" name="nota" id="nota" min="0" max="1000" step="0.01">
             </div>
             <div>
                 <label for="avaliacao" class="form-label">Avaliação</label>
                 <input type="text" class="form-control" name="avaliacao" id="avaliacao">
             </div>
-            <div>
+            <div class="p-2">
                 <input type="reset" class="btn btn-secondary" value="Limpar">
                 <input type="submit" class="btn btn-primary" value="Adicionar">
             </div>
