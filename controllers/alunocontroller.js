@@ -40,3 +40,17 @@ export async function perfil(req,res) {
     const professor = await Professor.findById(req.user.id)
     res.render("perfil.ejs", {professor:professor})
 }
+export async function editarprof(req,res){
+    const prof = await Professor.findById(req.user.id)
+    let professor = await Professor.findById(req.params.id)
+    res.render("editarprofessor.ejs", {Professor:professor,prof})
+}
+
+export async function editaprofe(req, res) {
+    let professor = await Professor.findById(req.params.id)
+        professor.nome = req.body.nome;
+        professor.email = req.body.email;
+
+        await professor.save()
+    }
+    
