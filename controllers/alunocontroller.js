@@ -4,8 +4,9 @@ import Curso from '../models/Curso.js'
 import Nota from '../models/Nota.js'
 
 export async function lst(req,res) {
+    const professor = await Professor.findById(req.user.id)
     const alunos = await Aluno.find(); // Busca todos os alunos do banco de dados
-    res.render('lst.ejs', { alunos }); // Renderiza a página ejs com os alunos encontradoss
+    res.render('lst.ejs', { alunos, professor:professor }); // Renderiza a página ejs com os alunos encontradoss
 }
 
 export async function abreCadastroNota(req,res){
@@ -24,8 +25,9 @@ export async function cadastraNota(req,res){
 }
 
 export async function lstCursos(req,res) {
+    const professor = await Professor.findById(req.user.id)
     const cursos = await Curso.find(); // Busca todos os cursos do banco de dados
-    res.render('lstCursos.ejs', { cursos }); // Renderiza a página ejs com os cursos encontrados
+    res.render('lstCursos.ejs', { cursos, professor:professor }); // Renderiza a página ejs com os cursos encontrados
 }
 export async function lstNota(req,res) {
     const nota = await Nota.find(); // Busca todos os cursos do banco de dados
