@@ -1,5 +1,5 @@
 export default function (req, res, next) {
-    if (req.isAuthenticated()&&req.user.admin == true) {
+    if (req.isAuthenticated()&&req.user.admin) {
         return next();
     }
     console.log("Negado")

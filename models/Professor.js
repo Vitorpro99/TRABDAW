@@ -13,6 +13,6 @@ const Professor = conexao.Schema({
     senha:{
         type:'String'
     },
-    admin:'String'
+    admin:'Boolean'
 })
 export default conexao.model('Professor',Professor)
