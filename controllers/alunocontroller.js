@@ -36,4 +36,3 @@ export async function perfil(req,res) {
     const professor = await Professor.findById(req.user.id)
     res.render("perfil.ejs", {professor:professor})
 }
-
