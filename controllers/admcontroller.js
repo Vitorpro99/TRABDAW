@@ -87,4 +87,8 @@ export async function lstNota(req,res) {
     res.render('lstNota.ejs', { nota, professor:professor }); // Renderiza a página ejs com os cursos encontrados
 }
 
+export function lstCadastro(req,res){
+    res.render('cadastros.ejs');
+}
+
     

@@ -6,7 +6,10 @@ const foto = multer({
 })
 
 import autenticacaoadmin from '../config/autenticacaoadmin.js'
-import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso,delAl,lstCursos,lst, lstNota } from '../controllers/admcontroller.js';
+import {cadastraNota,abreCadastroNota, cadastro, abreCadastro, abreCadastroAl,abreCadastroCurso, cadastroAl,cadastraCurso,delAl,lstCursos,lst, lstNota, lstCadastro } from '../controllers/admcontroller.js';
+
+//Lista de Cadastros
+router.get('/cadastros', autenticacaoadmin, lstCadastro)
 
 //Cadastro Prof
 router.get('/cadastro',autenticacaoadmin, abreCadastro)
