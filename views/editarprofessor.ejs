@@ -13,7 +13,7 @@
 <body>
 <h2 class="position-absolute top-0 start-50 translate-middle mt-5" name="title1" id="title1">Editar perfil</h2>
 <div class="bg-light d-flex flex-column flex-grow-1 p-3 text-bg-light col-5 col-md-8 position-absolute top-50 start-50 translate-middle border rounded-2">    
-    <form method="post" enctype="multipart/form-data">
+    <form method="post">
         <div>
             <label class="form-label" for="email">Email</label>
             <input class="form-control type="email" name="email" id="email" value="<%= prof.email %>">
@@ -26,8 +26,9 @@
             <input class="form-control" readonly type="text" name="matricula" id="matricula" value="<%= prof.matricula%>">
         
         <div>
-            <input class="btn btn-secondary" type="reset" value="Limpar">
             <input class="btn btn-primary" type="submit" value="Adicionar">
+            <input class="btn btn-secondary" type="reset" value="Limpar">
+            <a class="btn btn-warning" href="/user/delPr/<%=prof._id%>">Deletar</a>
         </div>
     </form>
 </div>

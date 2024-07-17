@@ -32,9 +32,9 @@ export async function lstCursos(req,res) {
 }
 export async function lstNota(req,res) {
     const professor = await Professor.findById(req.user.id)
-    const nota = await Nota.find({aluno:req.params.id}); // Busca todos os cursos do banco de dados
+    const nota = await Nota.find({aluno:req.params.id});
     const aluno = await Aluno.findOne({matricula:req.params.id})
-    res.render('lstNota.ejs', { Nota:nota, professor:professor, aluno:aluno }); // Renderiza a página ejs com os cursos encontrados
+    res.render('lstNota.ejs', { Nota:nota, professor:professor, aluno:aluno }); 
 }
 
 export async function perfil(req,res) {
@@ -54,4 +54,7 @@ export async function editaprofe(req, res) {
 
         await professor.save()
     }
-    
+    export async function delAl(req,res){
+        await Aluno.findByIdAndDelete(req.params.id)
+        res.redirect('/escola/')
+    }
