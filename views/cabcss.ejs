@@ -1,75 +1,183 @@
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Mono+One&display=swap');
 
-    h1 {
-        font-family:'Rubik Mono One', sans-serif;
-    }
-    
-    body {
-        transition: background-color 0.3s ease, color 0.3s ease;
-        /* Transição suave ao mudar de tema */
-    }
+h1 {
+    font-family: 'Rubik Mono One', sans-serif;
+}
 
-    /* Estilos adicionais para elementos específicos */
-    a {
-        color:#161616;
-        text-decoration: none;
-        transition: color 0.3s ease; /* Transição de cor para links */
-    }
+body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transição suave ao mudar de tema */
+}
 
-    a:hover {
-        cursor:pointer;
-        color:rgb(0, 132, 255);
-        transition: color 0.2s ease;
-    }
+/* Estilos adicionais para elementos específicos */
+a {
+    color: #161616;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    /* Transição de cor para links */
+}
 
-    /* Estilos para tema escuro */
-    .dark-mode {
-        background-color: #161616;
-        color: #fff;
-    }
+a:hover {
+    cursor: pointer;
+    color: rgb(0, 132, 255);
+    transition: color 0.2s ease;
+}
 
-    /* Estilos adicionais para elementos específicos no tema escuro */
-    .dark-mode a {
-        color: #ffa500;
-    }
+/* Estilos para tema escuro */
+.dark-mode {
+    background-color: #161616;
+    color: #fff;
+}
 
-    /* Estilos para o formulário no tema escuro */
-    .dark-mode .form-control {
-        background-color: #333;
-        color: #fff;
-        border-color: #666;
-    }
-    .dark-mode .bg-light {
-        background-color: #333 !important;
-        color: #fff !important;
-        border-color: #666 !important;
-    }
+/* Estilos adicionais para elementos específicos no tema escuro */
+.dark-mode a {
+    color: #ffa500;
+}
 
-    .dark-mode .btn {
-        background-color: white;
-        border-color: #555;
-        color: #fff;
-    }
-    .dark-mode .btn:hover {
-        background-color: lightslategray;
-        border-color: white;
-        transition: 0.s;
-    }
-    .dark-mode .btn-secondary {
-        background-color: #777;
-        border-color: #777;
-        color: #fff;
-    }
-    .dark-mode .li .li:hover{
-        background-color: lightslategray;
-        border-color: white;
-        transition: 0.2s;
-        color:#ffa500;
-    }
-    .dark-mode .form-label {
-        color: #ccc;
-    }
+.dark-mode .nav-link {
+    color: #fff !important;
+}
 
+.dark-mode .nav-link:hover {
+    color: #ffa500 !important;
+}
+
+/* Estilos para o formulário no tema escuro */
+.dark-mode .form-control {
+    background-color: #333;
+    color: #fff;
+    border-color: #666;
+}
+
+.dark-mode .bg-light {
+    background-color: #333 !important;
+    color: #fff !important;
+    border-color: #666 !important;
+}
+
+.dark-mode .btn {
+    background-color: white;
+    border-color: #555;
+    color: #fff;
+}
+
+.dark-mode .btn:hover {
+    background-color: lightslategray;
+    border-color: white;
+    transition: 0.s;
+}
+
+.dark-mode .btn-secondary {
+    background-color: #777;
+    border-color: #777;
+    color: #fff;
+}
+
+.dark-mode .li .li:hover {
+    background-color: lightslategray;
+    border-color: white;
+    transition: 0.2s;
+    color: #ffa500;
+}
+
+.dark-mode .form-label {
+    color: #ccc;
+}
+
+/* Estilos específicos para os elementos do HTML */
+.dark-mode .link-body-emphasis {
+    color: #fff !important;
+}
+
+.dark-mode .link-body-emphasis:hover {
+    color: #ffa500 !important;
+}
+
+.dark-mode .link-secondary {
+    color: #fff !important;
+}
+
+.dark-mode .link-secondary:hover {
+    color: #ffa500 !important;
+}
+
+.dark-mode .dropdown-menu {
+    background-color: #333;
+    color: #fff;
+}
+
+.dark-mode .dropdown-item {
+    color: #fff;
+}
+
+.dark-mode .dropdown-item:hover {
+    background-color: lightslategray;
+    color: #ffa500;
+}
+
+.dark-mode .dropdown-divider {
+    border-color: #666;
+}
+
+/* Estilos para a tabela */
+.dark-mode .table {
+    color: #fff;
+    background-color: #333;
+    border-color: #666;
+}
+
+.dark-mode .table th,
+.dark-mode .table td {
+    border-color: #666;
+}
+
+.dark-mode .table thead th {
+    color: #fff;
+    background-color: #444;
+}
+
+.dark-mode .table tbody tr:hover {
+    background-color: lightslategray;
+}
+
+.dark-mode .table a {
+    color: #ffa500;
+}
+
+.dark-mode .table a:hover {
+    color: rgb(0, 132, 255);
+}
+
+/* Estilos para o card do professor */
+.dark-mode .card-style1 {
+    background-color: #161616;
+    color: #fff;
+}
+
+.dark-mode .card-style1 .card-body {
+    background-color: #161616;
+}
+
+.dark-mode .card-style1 .text-white {
+    color: #fff !important;
+}
+
+.dark-mode .card-style1 .text-primary {
+    color: #ffa500 !important;
+}
+
+.dark-mode .card-style1 .text-secondary {
+    color: #ffa500 !important; /* Azul mais claro */
+}
+
+.dark-mode .card-style1 .bg-secondary {
+    background-color: #555 !important;
+}
+
+.dark-mode .card-style1 .list-unstyled li {
+    color: #fff;
+    font-size: large;
+}
 
 </style>

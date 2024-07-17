@@ -3,5 +3,5 @@ export default function (req, res, next) {
         return next();
     }
     console.log("Negado")
-    res.redirect("/");
+    res.redirect("/escola/login");
 };

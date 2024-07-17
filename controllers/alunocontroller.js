@@ -58,3 +58,9 @@ export async function editaprofe(req, res) {
         await Aluno.findByIdAndDelete(req.params.id)
         res.redirect('/escola/')
     }
+export async function logout(req,res){
+    req.logout(function(){
+        res.redirect('/escola/');
+    });
+    
+}
