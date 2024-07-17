@@ -22,6 +22,7 @@ export async function cadastraNota(req,res){
         nota: req.body.nota
     })
     await nota.save()
+    res.redirect('/user/lst')
 }
 
 export async function lstCursos(req,res) {

@@ -73,7 +73,7 @@ export async function cadastraNota(req,res){
 
 export async function delAl(req,res){
     await Aluno.findByIdAndDelete(req.params.id)
-    res.redirect('/escola/lst')
+    res.redirect('/admin/lst')
 }
 
 export async function lstCursos(req,res) {
